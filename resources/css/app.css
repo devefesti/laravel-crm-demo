@@ -1,0 +1,26 @@
+.tab-order-detail{
+    width: 100%;
+    background: white;
+    box-shadow: 2px;
+}
+
+td{
+    padding: 10px !important;
+}
+
+.navbar-left.open ul.menubar li.menu-item a .menu-label {
+    color: #b0bec5;
+    display: inline-block;
+    font-size: 15px !important;
+    font-weight: 200;
+}
+
+.navbar-left.open {
+    overflow-x: auto;
+    width: 171px !important;
+}
+
+.medal-col
+{
+    max-width: 20px;
+}
