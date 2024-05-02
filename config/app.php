@@ -293,8 +293,8 @@ return [
         'Menu'         => Webkul\Admin\Facades\Menu::class,
     ],
 
-    'token_url' => 'https://amabilejewels.it/rest/V1/integration/admin/token',
-    'orders_url' => 'https://amabilejewels.it/rest/V1/orders?searchCriteria[pageSize]=10',
-    'filtered_orders_url' => 'https://amabilejewels.it/rest/V1/orders/',
-    'add_product' => 'https://amabilejewels.it/rest/V1/products',
+    'token_url' => 'http://magento.efesti.com/rest/V1/integration/admin/token',
+    'orders_url' => 'http://magento.efesti.com/rest/V1/orders?searchCriteria[pageSize]=10',
+    'filtered_orders_url' => 'http://magento.efesti.com/rest/V1/orders/',
+    'add_product' => 'http://magento.efesti.com/rest/V1/products',
 ];
