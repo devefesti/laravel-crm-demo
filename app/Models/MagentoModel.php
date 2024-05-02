@@ -10,8 +10,8 @@ class MagentoModel extends Model
 {
     use HasFactory;
 
-    protected $username = 'api-amabile';
-    protected $password = 'Jiu(2@idl2930=1#@dje5';
+    protected $username = 'enrico';
+    protected $password = 'H48FUufeR42F';
 
     public static function getToken(){
 
@@ -20,8 +20,8 @@ class MagentoModel extends Model
             $client = new Client();
         
             $bodyParams = [
-                'username' => 'api-amabile',
-                'password' => 'Jiu(2@idl2930=1#@dje5',
+                'username' => 'enrico',
+                'password' => 'H48FUufeR42F',
             ];
     
             $response = $client->post(config('app.token_url'), [
