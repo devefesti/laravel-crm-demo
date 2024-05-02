@@ -280,7 +280,7 @@ class MagentoManager extends Model
     
                 try {
     
-                    $response = $client->get('https://amabilejewels.it/rest/V1/orders/'.$row['entity_id'], [
+                    $response = $client->get('http://magento.efesti.com/rest/V1/orders/'.$row['entity_id'], [
                         'headers' => $headers,
                     ]); 
             
@@ -337,7 +337,7 @@ class MagentoManager extends Model
     
                                         $row1 = $queryRes->fetch_assoc();
     
-                                        $response1 = $client->get('https://amabilejewels.it/rest/default/V1/products/'.$row1['configurable_sku'], [
+                                        $response1 = $client->get('http://magento.efesti.com/rest/default/V1/products/'.$row1['configurable_sku'], [
                                             'headers' => $headers,
                                         ]); 
                                 
@@ -439,7 +439,7 @@ class MagentoManager extends Model
             //if (OrderProdAttribute::where('order_id', $orderProd->order_id)->where('sku', $orderProd->sku)->get()->count() == 0){
                 try {
 
-                    $response = $client->get('https://amabilejewels.it/rest/V1/orders/'.$order->entity_id, [
+                    $response = $client->get('http://magento.efesti.com/rest/V1/orders/'.$order->entity_id, [
                         'headers' => $headers,
                     ]); 
             
@@ -490,7 +490,7 @@ class MagentoManager extends Model
     
                                         $row = $queryRes->fetch_assoc();
     
-                                        $response1 = $client->get('https://amabilejewels.it/rest/default/V1/products/'.$row['configurable_sku'], [
+                                        $response1 = $client->get('http://magento.efesti.com/rest/default/V1/products/'.$row['configurable_sku'], [
                                             'headers' => $headers,
                                         ]); 
                                 
@@ -786,7 +786,7 @@ class MagentoManager extends Model
                 ]
             ];
 
-            $client->post('https://amabilejewels.it/rest/V1/orders', [
+            $client->post('http://magento.efesti.com/rest/V1/orders', [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -814,7 +814,7 @@ class MagentoManager extends Model
                 ]
             ];
 
-            $client->post('https://amabilejewels.it/rest/default/V1/order/'. $id .'/ship', [
+            $client->post('http://magento.efesti.com/rest/default/V1/order/'. $id .'/ship', [
                 'headers' => $headers,
                 'json' => $payload,
             ]); */
@@ -935,7 +935,7 @@ class MagentoManager extends Model
         ];
 
         try{
-            $response = $client->request('PUT', 'https://amabilejewels.it/rest/V1/products/'.$data->sku, [
+            $response = $client->request('PUT', 'http://magento.efesti.com/rest/V1/products/'.$data->sku, [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -1026,13 +1026,13 @@ class MagentoManager extends Model
 
         try{
 
-            $response = $client->request('PUT', 'https://amabilejewels.it/rest/V1/products/'.$data->sku, [
+            $response = $client->request('PUT', 'http://magento.efesti.com/rest/V1/products/'.$data->sku, [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
 
             if (count($bundleOptions) == 0){
-                $response = $client->get('https://amabilejewels.it/rest/V1/bundle-products/'.$data->sku.'/options/all', [
+                $response = $client->get('http://magento.efesti.com/rest/V1/bundle-products/'.$data->sku.'/options/all', [
                     'headers' => $headers,
                     'json' => $payload,
                 ]);
@@ -1045,7 +1045,7 @@ class MagentoManager extends Model
                 //Rimuovo quindi le opzioni del bundle product
                 foreach($options as $option){
                     //dd($option['option_id']);
-                    $response = $client->request('DELETE', 'https://amabilejewels.it/rest/V1/bundle-products/'.$data->sku.'/options/'.$option['option_id'], [
+                    $response = $client->request('DELETE', 'http://magento.efesti.com/rest/V1/bundle-products/'.$data->sku.'/options/'.$option['option_id'], [
                         'headers' => $headers,
                     ]);
                 }
@@ -1139,7 +1139,7 @@ class MagentoManager extends Model
 
         try{
 
-            $response = $client->post('https://amabilejewels.it/rest/V1/products', [
+            $response = $client->post('http://magento.efesti.com/rest/V1/products', [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -1226,7 +1226,7 @@ class MagentoManager extends Model
 
         try{
 
-            $response = $client->post('https://amabilejewels.it/rest/V1/products', [
+            $response = $client->post('http://magento.efesti.com/rest/V1/products', [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -1342,7 +1342,7 @@ class MagentoManager extends Model
 
         try{
 
-            $response = $client->post('https://amabilejewels.it/rest/V1/products', [
+            $response = $client->post('http://magento.efesti.com/rest/V1/products', [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -1364,7 +1364,7 @@ class MagentoManager extends Model
         ];
 
         try{
-            $response = $client->request('DELETE','https://amabilejewels.it/rest/V1/products/'.$sku, [
+            $response = $client->request('DELETE','http://magento.efesti.com/rest/V1/products/'.$sku, [
                 'headers' => $headers,
             ]);
 
@@ -1445,8 +1445,8 @@ class MagentoManager extends Model
        
         $token = self::fetchToken();
         $client = new Client();
-        $requst_url = "https://amabilejewels.it/rest/default/V1/products/" . $sku;
-        $image = "https://amabilejewels.it/media/catalog/product/404.jpg";
+        $requst_url = "http://magento.efesti.com/rest/default/V1/products/" . $sku;
+        $image = "http://magento.efesti.com/media/catalog/product/404.jpg";
 
          try{
             $headers = [
@@ -1465,10 +1465,10 @@ class MagentoManager extends Model
             if(isset($data->media_gallery_entries) && !empty($data->media_gallery_entries) ){
                 $filePath = $data->media_gallery_entries[0]->file;
                
-                $image = "https://amabilejewels.it/media/catalog/product/" . $filePath;
+                $image = "http://magento.efesti.com/media/catalog/product/" . $filePath;
                
             }else{
-                $image = "https://amabilejewels.it/media/catalog/product/404.jpg";
+                $image = "http://magento.efesti.com/media/catalog/product/404.jpg";
             }
            
             return $image;
@@ -1664,7 +1664,7 @@ class MagentoManager extends Model
                 'Authorization' => 'Bearer '.$token,
             ];
 
-            $response = $client->get('https://amabilejewels.it/rest/default/V1/configurable-products/'.$data['sku'].'/options/all', [
+            $response = $client->get('http://magento.efesti.com/rest/default/V1/configurable-products/'.$data['sku'].'/options/all', [
                 'headers' => $headers
             ]); 
 
@@ -1681,7 +1681,7 @@ class MagentoManager extends Model
             }
 
             // 4. Get configurazioni prodotti(simple prods)
-            $response = $client->get('https://amabilejewels.it/rest/default/V1/products/'.$data['sku'], [
+            $response = $client->get('http://magento.efesti.com/rest/default/V1/products/'.$data['sku'], [
                 'headers' => $headers
             ]); 
 
@@ -1752,7 +1752,7 @@ class MagentoManager extends Model
         while ($row = $result->fetch_assoc()){
             $token = self::fetchToken();
             $client = new Client();
-            $requst_url = "https://amabilejewels.it/rest/default/V1/products/" . $row['sku'];
+            $requst_url = "http://magento.efesti.com/rest/default/V1/products/" . $row['sku'];
 
             $headers = [
                 'Authorization' => 'Bearer '.$token,
@@ -1884,7 +1884,7 @@ class MagentoManager extends Model
 
 
                 try{
-                    $response = $client->post('https://amabilejewels.it/rest/V1/configurable-products/'.$data->parent_sku.'/child', [
+                    $response = $client->post('http://magento.efesti.com/rest/V1/configurable-products/'.$data->parent_sku.'/child', [
                         'headers' => $headers,
                         'json' => $payload
                     ]);
@@ -1937,7 +1937,7 @@ class MagentoManager extends Model
         ];
 
         try{
-            $response = $client->post('https://amabilejewels.it/rest/V1/configurable-products/'.$sku.'/options', [
+            $response = $client->post('http://magento.efesti.com/rest/V1/configurable-products/'.$sku.'/options', [
                 'headers' => $headers,
                 'json' => $payload
             ]);
@@ -1978,7 +1978,7 @@ class MagentoManager extends Model
         ];
 
         try{
-            $response = $client->post('https://amabilejewels.it/rest/V1/configurable-products/'.$data->sku.'/options', [
+            $response = $client->post('http://magento.efesti.com/rest/V1/configurable-products/'.$data->sku.'/options', [
                 'headers' => $headers,
                 'json' => $payload
             ]);
@@ -2061,7 +2061,7 @@ class MagentoManager extends Model
 
                     try{
     
-                        $response = $client->post('https://amabilejewels.it/rest/V1/products', [
+                        $response = $client->post('http://magento.efesti.com/rest/V1/products', [
                             'headers' => $headers,
                             'json' => $payload,
                         ]);
@@ -2071,7 +2071,7 @@ class MagentoManager extends Model
                         ];
 
                         try{
-                            $response = $client->post('https://amabilejewels.it/rest/V1/configurable-products/'.$data->sku.'/child', [
+                            $response = $client->post('http://magento.efesti.com/rest/V1/configurable-products/'.$data->sku.'/child', [
                                 'headers' => $headers,
                                 'json' => $payload,
                             ]);
@@ -2128,7 +2128,7 @@ class MagentoManager extends Model
         
         try{
 
-            $response = $client->request('DELETE','https://amabilejewels.it/rest/V1/configurable-products/'.$parentSku.'/children/'.$childSku.'', [
+            $response = $client->request('DELETE','http://magento.efesti.com/rest/V1/configurable-products/'.$parentSku.'/children/'.$childSku.'', [
                 'headers' => $headers,
             ]);
 
@@ -2161,7 +2161,7 @@ class MagentoManager extends Model
         
         try{
 
-            $response = $client->get('https://amabilejewels.it/rest/V1/orders/'.$entity_id.'/comments', [
+            $response = $client->get('http://magento.efesti.com/rest/V1/orders/'.$entity_id.'/comments', [
                 'headers' => $headers,
             ]);
 
@@ -2371,7 +2371,7 @@ class MagentoManager extends Model
         
         try{
 
-            $response = $client->request('PUT', 'https://amabilejewels.it/rest/V1/products/'.$sku, [
+            $response = $client->request('PUT', 'http://magento.efesti.com/rest/V1/products/'.$sku, [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -2405,7 +2405,7 @@ class MagentoManager extends Model
         
         try{
 
-            $response = $client->request('PUT', 'https://amabilejewels.it/rest/V1/products/'.$sku, [
+            $response = $client->request('PUT', 'http://magento.efesti.com/rest/V1/products/'.$sku, [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
@@ -2439,7 +2439,7 @@ class MagentoManager extends Model
         ];
         
         try{
-            $response = $client->request('PUT', 'https://amabilejewels.it/rest/V1/products/'.$sku, [
+            $response = $client->request('PUT', 'http://magento.efesti.com/rest/V1/products/'.$sku, [
                 'headers' => $headers,
                 'json' => $payload,
             ]);
