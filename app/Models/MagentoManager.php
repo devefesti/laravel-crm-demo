@@ -1147,6 +1147,7 @@ class MagentoManager extends Model
 
             return true;
         }catch(\Exception $e){
+            dd($e);
             session()->flash('error', "Errore nella creazione del prodotto");
             return false;
         }
