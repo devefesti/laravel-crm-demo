@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 use App\Models\MagentoManager;
 use Illuminate\Console\Command;
 
-class SyncBundles extends Command
+class SyncConfigurables extends Command
 {
     /**
      * The name and signature of the console command.
