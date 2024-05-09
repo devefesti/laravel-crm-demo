@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="icon" href="https://amabilejewels.it/media/logo/stores/1/SCRITTAAMABILE.png">
+        <link rel="icon" href="https://www.efesti.com/wp-content/uploads/2022/07/cropped-fav.efesti.3.3-1-32x32.jpg">
         <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-57x57.png') }}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-60x60.png') }}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('vendor/webkul/admin/assets/images/favicon/apple-icon-72x72.png') }}">

@@ -3,7 +3,7 @@
         <div class="brand-logo">
             <a href="{{ route('admin.dashboard.index') }}">
                 {{-- <img src="{{ asset('vendor/webkul/admin/assets/images/logo.svg') }}" alt="{{ config('app.name') }}"/> --}}
-                <img width="140" src="https://amabilejewels.it/media/logo/stores/1/SCRITTAAMABILE.png" alt="{{ config('app.name') }}"/>
+                <img width="95" src="https://www.efesti.com/wp-content/uploads/2022/04/logo-home.png" alt="{{ config('app.name') }}"/>
                 
             </a>
         </div>
